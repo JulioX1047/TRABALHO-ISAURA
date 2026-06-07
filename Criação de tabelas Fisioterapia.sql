@@ -1,7 +1,7 @@
 CREATE DATABASE Fisioterapia;
 USE Fisioterapia;
 
--- 1. Tabelas Independentes (Não tem FK)
+
 CREATE TABLE paciente (
     idPaciente INT UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
@@ -81,7 +81,7 @@ CREATE TABLE exame (
     dataExame DATE,
     laudo TEXT,
     idTipoExame INT UNSIGNED,
-    idPaciente INT UNSIGNED -- Ajustei para ligar ao paciente direto
+    idPaciente INT UNSIGNED 
 );
 
 
@@ -89,7 +89,7 @@ CREATE TABLE avaliacao (
     idAvaliacao INT UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY,
     dataAvaliacao DATE,
     avaliacao TEXT,
-    progresso DECIMAL(5,2), -- Ex: 85.50 para representar porcentagem
+    progresso DECIMAL(5,2), 
     recomendacao TEXT,
     idPaciente INT UNSIGNED,
     idFisioterapeuta INT UNSIGNED
